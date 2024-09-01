@@ -1,0 +1,713 @@
+/* Import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Lexend');
+@import url('https://fonts.googleapis.com/css2?family=Caveat');
+@import url('https://fonts.googleapis.com/css2?family=Space Mono');
+
+
+/*  GLOBAL ELEMENT VALUES  */
+* {
+    margin: 0;  /* reset all margins and paddings to get rid of excess white space */
+    padding: 0;  /* reset all margins and paddings to get rid of excess white space */
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', monospace;  /* monospace font is set as the backup font*/
+}   
+
+/* This is the code for the main elements */
+/* Paragraph */
+p {
+    width: 75%;
+}
+/* Image */
+img {
+    transition: all 0.3s ease; /* Make all transitions ease in 0.3s */
+}
+/* Image hover effect */
+img:hover{
+    transform: scale(1.05); /* Increase scale of image*/
+}
+
+/* This is the code for the scrollbar (in case you have to scroll which most users probably do not have to */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb { /* The "thumb" is the thing you click and drag on */
+    background:rgba(128, 134, 139, 1);
+    border-radius: 5px;
+    height: 100px;
+}
+
+::-webkit-scrollbar-track { /* The track is the area which the thumb scrolls through */
+    background: white
+}
+
+/*  MAIN FONTS AND SIZES  */
+h1 {
+    text-align: center;
+}
+
+/* span class for text which needs to be in the Blab typeface */
+.blab_typeface{
+    font-family: 'Lexend';
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.blab_typeface:hover{
+    font-family: 'Lexend';
+    font-weight: bold;
+    font-size: 120%;
+}
+
+/* span class for text which needs to be in the Piece typeface */
+.piece_typeface{
+    font-family: 'Caveat';
+    font-size: 140%;
+    font-weight: bold;
+}
+
+/* span class for text which needs to be in the Babble typeface */
+.babble_typeface{
+    font-family: 'Space Mono';
+    font-weight: bold;
+}
+
+
+/*  This is the code for the navigation bar  */
+/* NAVBAR: The logo on the top left of */
+.logo {
+    color: black;
+    font-size: 35px;
+    font-family: 'Lexend';
+}
+
+/* NAVBAR: the subheading under the logo */
+.logo.subheading {
+    line-height: 1px;
+}
+
+/* NAVBAR: the subheading version of the blab logo */
+.logo.subheading.blab {
+    color: black;
+    font-size: 15px;
+    font-family: 'Lexend';
+}
+
+/* NAVBAR: hover effect for "blab" which brings users home to index.html */
+.logo.home:hover {
+    border-bottom: 2.5px dashed black;  /* 2.5px-thick, dashed lines, black colour */
+}
+
+/* NAVBAR: the subheading formatting for the word "by" */
+.logo.subheading.by {
+    color: black;
+    font-size: 15px;
+    font-family: 'Roboto';
+}
+
+/* NAVBAR: the top left section for the section and the logo */
+.main_top_left {
+    text-align: right;
+}
+
+/* The Gradient for blab+ */
+.blab_plus {
+    background: linear-gradient(45deg, #2E3192, #637ffd, #6dd5ed, #1BFFFF);
+    background-size: 300%;
+
+    /* mask the linear-gradient into the shape of the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* finish masking the linear-gradient into the shape of the text*/
+    
+    text-align: center;
+    animation: gradient 5s ease-in-out infinite; /* Set the "gradient" animation to loop infinitely, easing in and out and taking 5 seconds in total*/
+}
+
+/* This is the code for the "gradient" animation */
+@keyframes gradient {
+    /* Starts off here */
+    0% {
+        background-position: 0 50%;
+    }
+
+    /* At 50% of the 5 seconds, it should be here */
+    50% {
+        background-position: 50% 50%;
+    }  
+}
+
+/* NAVBAR: main formatting*/
+.navbar {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    display: flex;  /* Flex container, allows child elements to be reordered and resized depending on the space available */
+    align-items: center;  /* Centre items in their flex containers vertically (centre the menu bar within the 80px height) */
+    justify-content: space-between;  /* Creates equal spacing between the logo (blab.) and the menu list (Apps, Solutions, etc.) */
+    padding: 0 7%;  /* 0 padding from the top and bottom of the screen, 7% padding to the left and right */
+    z-index: 999; /* make sure it is at the top of the page always*/
+
+    /* NAVBAR: makes it follow the user as they scroll*/
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; /* required */
+}
+
+/* NAVBAR: The general settings for the navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 17.5px;
+    font-weight: 500;
+    z-index: 1;
+    transition: all 0.3s ease;
+    z-index: 999; /* make sure it is at the top of the page always*/
+}
+
+/* NAVBAR: The blocks of the main list (Apps, Solutions, etc.) of the navbar */
+.navbar ul li {
+    padding: 10px 30px;
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+}
+
+/* NAVBAR: The text of the navbar */
+.navbar ul li a {  
+    display: block;  /* Displays the texts in their own blocks */
+    color: black;
+    text-decoration: none;
+    text-align: center;  /* Vertically align the texts in the blocks */
+    opacity: 35%;  /* Creates the effect of slightly greyed out */
+    font-size: 20px;
+    transition: all 0.3s ease;  /* Eases hover affects in by 0.3s */
+    z-index: 999;
+}
+
+/* NAVBAR: the hover effect for the navbar */
+.navbar ul:hover {
+    background-color: rgba(255, 255, 255, 1);
+    /* blur the background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999;
+}
+
+/* NAVBAR: the hover effect for the navbar text */
+.navbar ul li a:hover {  
+    opacity: 100%;
+    text-decoration: overline;
+    z-index: 999;
+}
+
+/* NAVBAR: the dropdown */
+.navbar ul li ul.dropdown {
+    display: none;
+    width: 410px;
+    position: absolute; top: 44px; left: 0px;  /* Position the boxes of the dropdown items */
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(410px);
+    -webkit-backdrop-filter: blur(410px);
+    border-radius: 17.5px;
+    z-index: 999;
+}
+
+/* NAVBAR: the hover effect for the dropdown */
+.navbar ul li ul:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.045); /* add a shadow to the box */
+    backdrop-filter: blur(410px);
+    -webkit-backdrop-filter: blur(410px);
+    z-index: 999;
+}
+
+/* NAVBAR: the hover effect for the dropdown item list */
+.navbar ul li:hover ul.dropdown {
+    display: block;
+    z-index: 999;
+}
+
+/* NAVBAR: the dropdown items */
+.navbar ul li ul a {
+    font-size: 17px;
+    text-align: left;
+    z-index: 999;
+}
+
+/* NAVBAR: the dropdown item descriptions */
+.navbar_dropdown_desc {
+    font-size: 15px;
+    z-index: 999;
+}
+
+/* NAVBAR: the hover effect for the dropdown items */
+.navbar ul li ul a:hover {
+    text-decoration: none;
+    transform: scale(1.01);
+    z-index: 999;
+}
+
+
+/*  GENERAL  */
+.no_select {  /* prevent the selection/highlighting of text */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+
+/* ABOUT CARDS */
+.about {
+    font-size: 20px;
+}
+
+/* This is the code for the landing page */
+.about.landing_page {
+    margin-top: 75px;
+    margin-bottom: 90px;
+    margin-left: 225px;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* This is the code for the information on the About, and Blab+, page */
+.about_blab_plus_contact {
+    text-align: center;
+    padding: 45;
+}
+
+/* This is the code for the main information on the About, and Blab+, page */
+.about.blab_plus_contact_main {
+    font-weight: bold;
+    font-size: 50px;
+    margin: 0px;
+    line-height: 65px;
+}
+
+/* This is the code for the Pricing description for blab+ */
+.about.blab_plus_pricing_description {
+    font-size: 19.5px;
+}
+
+/* This is the code for the contact information */
+.about.contact {
+    font-size: 19.5px;
+    text-align: left;
+    position: absolute;
+    left: 1430px;
+    top: 650px;
+}
+
+/* This is the code for botton card in the about page for "Who We Are" */
+.about_card.who_we_are {
+    position: absolute;
+    top: 550px;
+    left: 60px;
+    font-size: 90%;
+    width: 1200px
+}
+
+/* This is the code for the button */
+.button {
+    font-family: 'Roboto';
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+
+    padding: 10px 20px;
+    border-radius: 40px;
+    background: rgba(29, 29, 31, 0.01);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.025);
+
+    transition: all 0.3s ease;
+}
+
+/* This is the code for the hover effect of the button */
+.button:hover {
+    color: white;
+    background: rgb(29,29,31);
+    border: 1px solid rgba(237, 237, 237, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 60px;
+    transform: scale(1.01);
+}
+
+
+/* This is the code for the first feature of buying blab+, and its hover effect */
+.about_card.pricing_1 {
+    background: rgb(247, 247, 247);
+    position: absolute;
+    top: 385px;
+    left: 75px;
+    transition: all 0.3s ease;
+}
+.about_card.pricing_1:hover {background: rgb(249, 249, 249);}
+
+
+/* This is the code for the second feature of buying blab+, and its hover effect */
+.about_card.pricing_2 {
+    background: rgb(247, 247, 247);
+    position: absolute;
+    top: 385px;
+    right: 75px;
+    transition: all 0.3s ease
+}
+.about_card.pricing_2:hover {background: rgb(249, 249, 249);}
+
+
+/* This is the code for the third feature of buying blab+, and its hover effect */
+.about_card.pricing_3 {
+    background: rgb(247, 247, 247);
+    position: absolute;
+    top: 595px;
+    left: 75px;
+    transition: all 0.3s ease
+}
+.about_card.pricing_3:hover {background: rgb(249, 249, 249);}
+
+
+/* This is the code for the fourth feature of buying blab+, and its hover effect */
+.about_card.pricing_4 {
+    background: rgb(247, 247, 247);
+    position: absolute;
+    top: 595px;
+    right: 75px;
+    transition: all 0.3s ease
+}
+.about_card.pricing_4:hover {background: rgb(249, 249, 249);}
+
+
+/* This is the code for the cards of information used throughout the site */
+.about_card {
+    white-space: nowrap;
+    text-align: left;
+    padding: 20px 20px 25px 20px;
+    width: 780px;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid rgba(237, 237, 237, 0.5);
+    background: rgb(252, 252, 252);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.025);
+    position: relative;
+    margin: 85px;
+    transition: all 0.3s ease;
+}
+
+/* This is the code for the information card's hover effect */
+.about_card:hover {
+    border-radius: 40px;
+    background: rgb(253, 253, 253);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    transform: scale(1.01);
+}
+
+/* This is the code for the text put inside of the about card */
+.about_card_description {
+    color: rgba(118, 118, 118);
+    font-size: 20px;
+    text-align: left;
+    max-width: 780px;   
+    display: inline-block;
+}
+
+/* This is the code for the header of the text in the about card */
+.about_card_header {
+    color: black;
+    font-size: 32px;
+    font-family: 'Lexend';
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* This is the code for the hover effect of the important keywords in the header of the text, in the about card */
+.about_card_header .main:hover {
+    font-size: 34px;
+    text-decoration: underline;
+}
+
+/* This is the code for the "Block out the noise" in piece.html, it creates a fading gradient to literally block out "the noise" */
+.about_card_header .lighter {
+    font-size: 32px;
+    font-family: 'Lexend';
+    font-weight: bold;
+
+    /* Same formatting and idea as the blab+ gradient */
+    background: linear-gradient(90deg, rgba(0, 0, 0) 0%, rgb(211, 211, 211) 55%, rgb(255, 255, 255) 70%);
+    background-size: 150%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    animation: gradient 5s ease-in-out infinite;
+}
+
+/* This is the same gradient animation used in the prior blab+ animation */
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 50% 50%;
+    }  
+}
+
+
+/* SAMPLE POSTS */
+/* PIECE-SPECIFIC POSTS */
+
+/* This is the code for the sample Piece posts and their hover effects*/
+img.piece_post {
+    border-radius: 20px;
+    border: 1px solid rgba(196, 207, 214, 1);
+    transform: scale(0.75);
+}
+
+img.piece_post:hover {
+    border-radius: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.075);
+    transform: scale(0.775);
+}
+
+/* This is the code for the Piece post collage */
+.piece_posts_collage {
+    position: absolute;
+    left: -10px;
+    top: 10px;
+}
+
+/* This is the code for the Piece post by @writersonpiece */
+img.piece_post.writersonpiece {
+    position: absolute;
+    top: 513px;
+    left: 1006px;
+    z-index: 997;
+}
+
+/* This is the code for the Piece post by @matt and its hover effect*/
+img.piece_post.matt {
+    position: absolute;
+    top: 100px;
+    left: 1382px;
+    z-index: 996;
+}
+img.piece_post.matt:hover {
+    z-index: 998; /* Bring to front on hover */
+}
+
+/* This is the code for the Piece post by @dainwalker and its hover effect*/
+img.piece_post.dainwalker {
+    position: absolute;
+    top: 83px;
+    left: 932px;
+    z-index: 995;
+}
+img.piece_post.dainwalker:hover {
+    z-index: 998; /* Bring to front on hover */
+}
+
+
+/* BABBLE-SPECFICIC POSTS */
+/* This is the code for the sample Babble posts and their hover effects*/
+img.babble_post {
+    border-radius: 20px;
+    border: 1px solid rgba(196, 207, 214, 1);
+    transform: scale(0.85);
+}
+
+img.babble_post:hover {
+    border-radius: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.075);
+    transform: scale(0.8755);
+}
+
+/* This is the code for the Babble post collage */
+.babble_posts_collage {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+}
+
+/* This is the code for the Babble post by @nader*/
+img.babble_post.nader {
+    position: absolute;
+    top: 85px;
+    left: 1000px;
+    z-index: 997;
+}
+
+/* This is the code for the Babble post by @sahil and its hover effect*/
+img.babble_post.sahil {
+    position: absolute;
+    top: 90px;
+    left: 1380px;
+    z-index: 996;
+}
+img.babble_post.sahil:hover {
+    z-index: 998; /* Bring to front on hover */
+}
+
+/* This is the code for the Babble post by @writersonbabble and its hover effect*/
+img.babble_post.writersonbabble {
+    position: absolute;
+    top: 454px;
+    left: 965px;
+    z-index: 995;
+}
+img.babble_post.writersonbabble:hover {
+    z-index: 998; /* Bring to front on hover */
+}
+
+
+/* LANDING PAGE SHOWCASE FLOATING IMAGES */
+/* This is the code for the Piece floating animation on the home page */
+.showcase_piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px;
+    margin-right: 500px;
+    animation: animate_piece 2.5s infinite ease-in-out alternate;
+}
+/* This is the animation for the Piece floating animation */
+@keyframes animate_piece {
+    100% {
+        transform: translate(4px, 10px); /* Moves it by 4px and 10px horizontally and vertically */
+    }
+}
+
+/* This is the code for the Babble floating animation on the home page */
+.showcase_babble {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -555px;
+    margin-left: 1000px;
+    animation: animate_babble 3s infinite ease-in-out alternate;
+}
+/* This is the code for the Babble floating animation on the home page */
+@keyframes animate_babble {
+    100% {
+        transform: translate(-2px, -12px); /* Moves it by -4px and -12px horizontally and vertically */
+    }
+}
+
+/* This is the code for the container of the floating showcase squares on the home page*/
+.showcase_image_container {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    text-align: center;
+    padding: 30px;
+    margin-left: -100px;
+}
+
+/* This is the code for text inside the floating showcase containers on the home page */
+.showcase_text {
+    color: black;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* disable any hover effects */
+}
+
+/* This is the code for text (specifically for Babble) inside the floating showcase containers on the home page */
+.showcase_text.babble {
+    color: black;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* disable any hover effects */
+}
+
+/* This is the code for the images in the fkoating showcase containers on the home page*/
+img.landing_page_showcase{
+    border-radius: 4%;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 1px;
+}
+
+
+/* TEAM */
+/* This is the code for the entire container which houses all the profile boxes of the team members (like the formatting grid) */
+.team_row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: auto;
+}
+
+/* This is the code for the profile box container of the team members, and its hover effect*/
+.profile_box {
+    font-family: 'Roboto';
+    width: 350px;
+    height: 350px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid rgba(237, 237, 237, 1);
+    background: rgb(252, 252, 252);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.025);
+    transition: all 0.3s ease;
+}
+.profile_box:hover {
+    background: rgb(255, 255, 255);
+    height: 330px;
+}
+
+/* This is the code for the image in the profile box container of the team members, and its hover effect*/
+.profile_box img {
+    height: 70px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 7px;
+    filter: saturate(0%); /* make it black and white */
+    transition: all 0.3s ease;
+}
+.profile_box img:hover {
+    filter: saturate(100%); /* give the iamge back its colour */
+    height: 210px;
+    border-radius: 20px;
+}
+
+/* This is the code for h4 (used for the member's name) in the profile box container of the team members */
+.profile_box h4 {
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+/* This is the code for small (used for the member's role) in the profile box container of the team members */
+small {
+    color: #555;
+    font-weight: bold;
+    line-height: 10px;
+}
+
+/* This is the code for the paragraph (used for the member's role description ) in the profile box container of the team members */
+.profile_box p {
+    font-size: 15px;
+    text-align: justify;
+    line-height: 24px;
+    color: #555;
+    width: 300px;
+}

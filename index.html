@@ -1,0 +1,86 @@
+<html>
+    <!--The header of the document -->
+    <head>
+        <meta charset="UTF-8">  <!-- Set character encoding to the most comon character enconding used on the web (supports most languages) -->
+        <!-- Set the width of the viewport to the width of the device, set the initial scale of the page to 1.0 (natural size) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Allows for responseive design regardless of screen resoluion (up to a certain point) -->
+        <title>Home | Blab</title>
+        <link href="main.css" rel="stylesheet" type="text/css">
+    </head>
+        
+    <!--The body of the document -->
+    <body>
+        <!-- This is the navigation bar -->
+        <div class="navbar">
+            <a href="index.html"><h1><span class="logo home no_select">blab</span></h1></a> <!-- Logo on the top left, put classes in span instead of h1 to avoid the text moving when effect is placed on hover-->
+
+            <!-- Navigation bar top level (Apps, Solutions, About us) -->
+            <ul>
+
+                <!-- Navigation bar, Apps -->
+                <li>
+                    <a href="#">Apps</a>
+                    <ul class="dropdown">
+                        <!-- Navigation bar second level, (APPS -> PIECE) -->
+                        <li><a href="piece.html">
+                            <span class="piece_typeface">Piece</span><br>
+                            <span class="navbar_dropdown_desc">A long-form social media site for deep discussions and text-based interactions.</span>
+                        </a></li>
+                        <!-- Navigation bar second level, (APPS -> BABBLE)-->
+                        <li><a href="babble.html">
+                            <span class="babble_typeface">Babble</span><br>
+                            <span class="navbar_dropdown_desc">An anonymous forum for verified professionals to discuss their jobs, work life, and organisations.</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <!-- Navigation bar, Solutions -->
+                <li>
+                    <a href="#">Solutions</a>
+                    <ul class="dropdown">
+                        
+                        <!-- Navigation bar second level, (SOLUTIONS -> BLAB+ )-->
+                        <li><a href="blab-plus.html">
+                            <span class="blab_typeface">blab<span class="blab_plus">+</span></span><br>
+                            <span class="navbar_dropdown_desc">Edit posts, priority rankings in conversations and search, longer posts, less ads, and more... on all of our platforms.</span>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <!-- Navigation bar, About us -->
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </div>
+
+
+        <!-- MISSION STATEMENT -->
+        <p class="about landing_page">
+            At <span class="blab_typeface">blab</span>, we believe in the power of communication to 
+            <br> bring people together and foster understanding.
+            <br><br>
+            <!-- Button which links to about.html -->
+            <a href="about.html" class="button">Learn more about us</a>
+            <br><br>
+        </p>
+        
+
+        <!-- SHOWCASE -->
+        <!-- SHOWCASE (Piece) -->
+        <a class="showcase_piece" href="piece.html">
+            <div class="showcase_image_container">
+                <img src="./images/piece_landing_page.jpg" alt="Piece" class="landing_page_showcase" style="width:500px; height:500px;">  <!-- Lock the image at 500px -->
+                <p class="showcase_text piece_typeface no_select">Piece</p>
+            </div>
+        </a>
+
+        <!-- SHOWCASE (Babble) -->
+        <a class="showcase_babble" href="babble.html">
+            <div class="showcase_image_container">
+                <img src="./images/babble_landing_page.jpg" alt="Babble" class="landing_page_showcase" style="width:500px; height:500px;">  <!-- Lock the image at 500px -->
+                <p class="showcase_text babble_typeface no_select">Babble</p>
+            </div>
+        </a>
+
+    </body>
+
+</html>
